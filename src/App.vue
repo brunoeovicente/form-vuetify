@@ -42,7 +42,7 @@
                 :items="items"
                 label="Sexo"
                 filled
-                v-model="formData.gender"
+                v-model="formData.sex"
               ></v-select>
             </v-col>
             <v-col cols="12" sm="6">
@@ -74,7 +74,7 @@ export default {
   components: {},
 
   data: () => ({
-    formData: { name: "", surname: "", gender: "", email: "" },
+    formData: { name: "", surname: "", sex: "", email: "" },
     items: ["Masculino", "Feminino"],
   }),
 };
