@@ -38,17 +38,36 @@
           <!--  -->
           <v-row class="mt-0 pt-0">
             <v-col cols="12" sm="6">
-              <v-select
-                :items="items"
-                label="Sexo"
+              <v-text-field
+                label="Idade"
+                placeholder=""
                 filled
-                v-model="formData.sex"
+                v-model="formData.age"
+              ></v-text-field>
+            </v-col>
+            <v-col cols="12" sm="6">
+              <v-text-field
+                label="Celular"
+                placeholder=""
+                filled
+                v-model="formData.phone"
+              ></v-text-field>
+            </v-col>
+          </v-row>
+          <!--  -->
+          <v-row class="mt-0 pt-0">
+            <v-col cols="12" sm="6">
+              <v-select
+                :items="identitySexItems"
+                label="Identidade de gênero"
+                filled
+                v-model="formData.sexIdentity"
               ></v-select>
             </v-col>
             <v-col cols="12" sm="6">
               <v-text-field
                 label="E-mail"
-                placeholder="@gmail.com"
+                placeholder=""
                 filled
                 v-model="formData.email"
               ></v-text-field>
@@ -74,8 +93,23 @@ export default {
   components: {},
 
   data: () => ({
-    formData: { name: "", surname: "", sex: "", email: "" },
-    items: ["Masculino", "Feminino"],
+    formData: {
+      name: "",
+      surname: "",
+      age: "",
+      phone: "",
+      sexIdentity: "",
+      email: "",
+    },
+    identitySexItems: [
+      "Homem Cis",
+      "Mulher Cis",
+      "Mulher Transsexual",
+      "Homem Transsexual",
+      "Travesti",
+      "Intersexo",
+      "Cross dressing",
+    ],
   }),
 };
 </script>
